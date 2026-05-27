@@ -365,16 +365,14 @@ export default function App() {
                       className="rounded-[2rem] p-5 shadow-glow"
                       style={{ border: '1px solid rgba(196,150,59,0.22)', background: 'rgba(13,22,48,0.95)' }}
                     >
-                      {/* Update 11: outer box unchanged; image scaled down with object-contain so more dark navy shows */}
                       <div
-                        className="overflow-hidden rounded-[1.6rem] border border-white/10 flex items-center justify-center"
-                        style={{ background: '#0A122A', aspectRatio: '4/5' }}
+                        className="overflow-hidden rounded-[1.6rem] border border-white/10"
+                        style={{ aspectRatio: '4/5' }}
                       >
                         <img
                           src={benHeadshot}
                           alt="Professional headshot of Benjamin Levy"
-                          className="object-contain"
-                          style={{ width: '82%', height: '82%', display: 'block' }}
+                          className="h-full w-full object-cover object-top"
                         />
                       </div>
 
