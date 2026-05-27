@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-ink text-slate-100 antialiased;
+  background-image:
+    radial-gradient(circle at top, rgba(27, 47, 94, 0.32), transparent 30%),
+    radial-gradient(circle at right, rgba(196, 150, 59, 0.09), transparent 32%),
+    linear-gradient(180deg, #09101F 0%, #0D1630 50%, #09101F 100%);
+}
+
+::selection {
+  background: rgba(196, 150, 59, 0.28);
+}
+
+@layer components {
+  .section-shell {
+    @apply mx-auto max-w-7xl px-6 sm:px-8 lg:px-12;
+  }
+
+  .glass {
+    @apply border border-white/10 bg-white/[0.04] backdrop-blur;
+  }
+
+  .chip {
+    @apply rounded-full px-3 py-1 text-xs font-medium text-slate-200;
+    border: 1px solid rgba(196, 150, 59, 0.25);
+    background-color: rgba(196, 150, 59, 0.08);
+  }
+
+  .primary-btn {
+    @apply inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition hover:scale-[1.02] hover:opacity-90;
+    background: linear-gradient(135deg, #C4963B, #D4A84B);
+    color: #09101F;
+    font-weight: 700;
+  }
+
+  .secondary-btn {
+    @apply inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-white transition;
+    border: 1px solid rgba(196, 150, 59, 0.28);
+    background-color: rgba(196, 150, 59, 0.07);
+  }
+
+  .secondary-btn:hover {
+    background-color: rgba(196, 150, 59, 0.14);
+  }
+
+  .timeline-line {
+    @apply relative space-y-6;
+  }
+
+  .timeline-line::before {
+    content: '';
+    position: absolute;
+    left: 1.1rem;
+    top: 0.5rem;
+    height: calc(100% - 1rem);
+    width: 1px;
+    background: rgba(196, 150, 59, 0.18);
+  }
+
+  @media (min-width: 640px) {
+    .timeline-line::before {
+      left: 1.5rem;
+    }
+  }
+}
